@@ -1,0 +1,95 @@
+body {
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.container-fluid {
+    margin-top: 50px;
+}
+
+.img-fluid {
+    max-width: 200px;
+    margin-right: 20px
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.index-selects {
+    width: 400px;
+}
+
+.row-select {
+    margin-top: 60px;
+    margin-bottom: 40px
+}
+
+.flex-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fa-color-icons {
+    color: #ffA000 !important;
+}
+
+li.completed::after {
+    background-color: #ffA000 !important;
+}
+
+li.active::before {
+    background-color: #ffA000 !important;
+}
+
+li.active::after {
+    background-color: #ffA000 !important;
+}
+
+li.completed::before {
+    background-color: #ffA000 !important;
+}
+
+.select2-container .select2-selection--single {
+    height: 40px;
+    font-size: 18px;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+    line-height: 39px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    margin-top: 4px;
+}
+
+main {
+    margin-bottom: 130px
+}
+
+.scrolled-down {
+    transform: translateY(-100%);
+    transition: all 0.3s ease-in-out;
+}
+
+.scrolled-up {
+    transform: translateY(0);
+    transition: all 0.3s ease-in-out;
+}
+
+table {
+    margin-top: 30px;
+}
+
+.buton-options {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+span.icon-button {
+    display: block;
+}
