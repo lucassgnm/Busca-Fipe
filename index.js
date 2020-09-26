@@ -1,3 +1,4 @@
+/* Muda o aspecto do botão quando ativo */
 $('.btn').on('click', function() {
     $('.btn').removeClass('active');
     $(this).addClass('active');
@@ -21,16 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
             last_scroll_top = scroll_top;
         });
     }
-    /* Select2 configs */
-    $('.select-marca').select2({
-        placeholder: "Selecione a marca"
-    });
-    $('.select-modelo').select2({
-        placeholder: "Selecione o modelo"
-    });
-    $('.select-ano').select2({
-        placeholder: "Selecione o ano"
-    });
 
     /* Declaração de variáveis */
     const baseurl = 'https://parallelum.com.br/fipe/api/v1/';
@@ -43,8 +34,20 @@ document.addEventListener("DOMContentLoaded", () => {
     $(".select-marca").prop("disabled", true);
     $(".select-modelo").prop("disabled", true);
     $(".select-ano").prop("disabled", true);
+
+    /* Select2 configs */
+    $(elSelectMarca).select2({
+        placeholder: "Selecione a marca"
+    });
+    $(elSelectModelo).select2({
+        placeholder: "Selecione o modelo"
+    });
+    $(elSelectAno).select2({
+        placeholder: "Selecione o ano"
+    });
     /* Fim configs */
 
+    /* Listeners dos botões do tipo*/
     document.querySelector("#btn-opt-motos").addEventListener("click", function(e) {
         elTBody.innerHTML = "";
         $(".select-marca").prop("disabled", false);
@@ -65,7 +68,9 @@ document.addEventListener("DOMContentLoaded", () => {
         opt = "caminhoes";
         carregaMarcas("caminhoes");
     });
+    /* Fim listeners */
 
+    /* Listeners dos select2 */
     $('.select-marca').on('select2:select', function(e) {
         elTBody.innerHTML = "";
         carregaModelos(opt);
@@ -80,13 +85,14 @@ document.addEventListener("DOMContentLoaded", () => {
         elTBody.innerHTML = "";
         carregaTabela(opt);
     });
+    /* Fim listeners select2 */
 
     function carregaMarcas(tipoveiculo) {
-        $(".select-modelo").prop("disabled", true);
-        $(".select-ano").prop("disabled", true);
+        $(elSelectModelo).prop("disabled", true);
+        $(elSelectAno).prop("disabled", true);
         elSelectModelo.innerHTML = "";
         /* Faz requisiçãpo das marcas */
-        $('.select-ano').val(null).trigger('change');
+        $(elSelectAno).val(null).trigger('change');
         axios.get(baseurl + tipoveiculo + '/marcas')
             .then(response => {
                 marcas = response.data;
@@ -102,11 +108,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function carregaModelos(tipoveiculo) {
         /* Limpa o select-ano */
-        $('.select-ano').val(null).trigger('change');
-        $(".select-ano").prop("disabled", true);
+        $(elSelectAno).val(null).trigger('change');
+        $(elSelectAno).prop("disabled", true);
         elSelectAno.innerHTML = "";
         /* Ativa select-modelo */
-        $(".select-modelo").prop("disabled", false);
+        $(elSelectModelo).prop("disabled", false);
         /* Faz requisiçãpo dos modelos disponiveis para a marca */
         axios.get(baseurl + tipoveiculo + `/marcas/${elSelectMarca.value}/modelos`)
             .then(response => {
@@ -123,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function carregaAnos(tipoveiculo) {
         /* Ativa select-ano */
-        $(".select-ano").prop("disabled", false);
+        $(elSelectAno).prop("disabled", false);
         /* Faz requisiçãpo dos anos disponiveis para o modelo */
         axios.get(baseurl + tipoveiculo + `/marcas/${elSelectMarca.value}/modelos/${elSelectModelo.value}/anos`)
             .then(response => {
@@ -138,6 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
     }
 
+    /* Coloca os dados da requisição na tabela */
     function carregaTabela(tipoveiculo) {
         axios.get(baseurl + tipoveiculo + `/marcas/${elSelectMarca.value}/modelos/${elSelectModelo.value}/anos/${elSelectAno.value}`)
             .then(response => {
@@ -176,6 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+/* Carrega os itens do select2 (Marca / Modelo / Ano) */
 function carregaItensSelect(select, data) {
     select.innerHTML = data;
 }
