@@ -1,0 +1,33 @@
+body {
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.img-fluid {
+    max-width: 200px;
+    margin-right: 20px
+}
+
+.container-fluid {
+    margin-top: 50px;
+}
+
+main {
+    margin-bottom: 130px
+}
+
+.scrolled-down {
+    transform: translateY(-100%);
+    transition: all 0.3s ease-in-out;
+}
+
+.scrolled-up {
+    transform: translateY(0);
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* Fim index */

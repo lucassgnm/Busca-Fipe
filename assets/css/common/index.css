@@ -1,20 +1,3 @@
-body {
-    background-image: url("../images/background.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: 50% 50%;
-}
-
-.container-fluid {
-    margin-top: 50px;
-}
-
-.img-fluid {
-    max-width: 200px;
-    margin-right: 20px
-}
-
 .card {
     background-color: rgba(0, 0, 0, 0.4) !important;
 }
@@ -65,20 +48,6 @@ li.completed::before {
 
 .select2-container--default .select2-selection--single .select2-selection__arrow b {
     margin-top: 4px;
-}
-
-main {
-    margin-bottom: 130px
-}
-
-.scrolled-down {
-    transform: translateY(-100%);
-    transition: all 0.3s ease-in-out;
-}
-
-.scrolled-up {
-    transform: translateY(0);
-    transition: all 0.3s ease-in-out;
 }
 
 table {
