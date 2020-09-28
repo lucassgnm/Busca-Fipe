@@ -1,3 +1,8 @@
+toastr.options = {
+    "positionClass": "toast-bottom-full-width",
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
     /* Configs */
     // Rating Initialization
@@ -178,6 +183,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 carregaItensSelect(elSelectAno, data)
             });
     }
+
+    document.querySelector('#btnEnviaAval').addEventListener('click', function() {
+        toastr.success('Obrigado! Sua avaliação foi cadastrada com sucesso.')
+    });
 });
 
 function carregaItensSelect(select, data) {
