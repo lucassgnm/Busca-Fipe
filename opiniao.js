@@ -97,21 +97,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* Listeners dos botões do tipo*/
     document.querySelector("#btn-opt-motos").addEventListener("click", function(e) {
-        $(".select-marca").prop("disabled", false);
         opt = "motos";
         carregaMarcas("motos");
+        $(".select-marca").prop("disabled", false);
     });
 
     document.querySelector("#btn-opt-carros").addEventListener("click", function(e) {
-        $(".select-marca").prop("disabled", false);
         opt = "carros";
         carregaMarcas("carros");
+        $(".select-marca").prop("disabled", false);
     });
 
     document.querySelector("#btn-opt-caminhoes").addEventListener("click", function(e) {
-        $(".select-marca").prop("disabled", false);
         opt = "caminhoes";
         carregaMarcas("caminhoes");
+        $(".select-marca").prop("disabled", false);
     });
     /* Fim listeners */
 
