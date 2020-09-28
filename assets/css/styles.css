@@ -1,9 +1,15 @@
 body {
-    background-image: url("../images/background.jpg");
+    background: linear-gradient(to right, #f84655, #480048);
+    min-height: 100vh;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-position: 50% 50%;
+}
+
+img {
+    height: 170px;
+    width: 140px
 }
 
 .img-fluid {
@@ -16,7 +22,7 @@ body {
 }
 
 main {
-    margin-bottom: 130px
+    margin-bottom: 60px
 }
 
 .scrolled-down {
