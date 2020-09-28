@@ -1,11 +1,55 @@
-/* Muda o aspecto do botão quando ativo */
-$('.btn').on('click', function() {
-    $('.btn').removeClass('active');
-    $(this).addClass('active');
-});
-
 document.addEventListener("DOMContentLoaded", () => {
     /* Configs */
+    // Rating Initialization
+    $(document).ready(function() {
+        $('.rateme1').mdbRate();
+    });
+
+    $(document).ready(function() {
+        $('.rateme2').mdbRate();
+    });
+
+    $(document).ready(function() {
+        $('.rateme3').mdbRate();
+    });
+
+    $(document).ready(function() {
+        $('.rateme4').mdbRate();
+    });
+
+    $(document).ready(function() {
+        $('.rateme5').mdbRate();
+    });
+
+    $(document).ready(function() {
+        $('.rateme6').mdbRate();
+    });
+
+    $(document).ready(function() {
+        $('.rateme7').mdbRate();
+    });
+
+    $(document).ready(function() {
+        $('.rateme8').mdbRate();
+    });
+
+    $(document).ready(function() {
+        $('.rateme9').mdbRate();
+    });
+
+    $(document).ready(function() {
+        $('.rateme10').mdbRate();
+    });
+
+    $(document).ready(function() {
+        $('.rateme11').mdbRate();
+    });
+
+    /* Muda o aspecto do botão quando ativo */
+    $('.btn-type').on('click', function() {
+        $('.btn-type').removeClass('active');
+        $(this).addClass('active');
+    });
     /* Adicionar padding top para mostrar o conteúdo atrás da barra de navegação */
     $('body').css('padding-top', $('.navbar').outerHeight() + 'px')
 
@@ -28,7 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
     var elSelectMarca = document.querySelector(".select-marca");
     var elSelectModelo = document.querySelector(".select-modelo");
     var elSelectAno = document.querySelector(".select-ano");
-    var elTBody = document.querySelector("tbody");
     var opt = null;
 
     $(".select-marca").prop("disabled", true);
@@ -37,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* Select2 configs */
     $(elSelectMarca).select2({
-        placeholder: "Selecione a marca",
+        placeholder: "Selecione a marca"
     });
     $(elSelectModelo).select2({
         placeholder: "Selecione o modelo"
@@ -49,21 +92,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* Listeners dos botões do tipo*/
     document.querySelector("#btn-opt-motos").addEventListener("click", function(e) {
-        elTBody.innerHTML = "";
         $(".select-marca").prop("disabled", false);
         opt = "motos";
         carregaMarcas("motos");
     });
 
     document.querySelector("#btn-opt-carros").addEventListener("click", function(e) {
-        elTBody.innerHTML = "";
         $(".select-marca").prop("disabled", false);
         opt = "carros";
         carregaMarcas("carros");
     });
 
     document.querySelector("#btn-opt-caminhoes").addEventListener("click", function(e) {
-        elTBody.innerHTML = "";
         $(".select-marca").prop("disabled", false);
         opt = "caminhoes";
         carregaMarcas("caminhoes");
@@ -72,19 +112,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* Listeners dos select2 */
     $('.select-marca').on('select2:select', function(e) {
-        elTBody.innerHTML = "";
         carregaModelos(opt);
     });
 
     $('.select-modelo').on('select2:select', function(e) {
-        elTBody.innerHTML = "";
         carregaAnos(opt);
     });
 
-    $('.select-ano').on('select2:select', function(e) {
-        elTBody.innerHTML = "";
-        carregaTabela(opt);
-    });
+    $('.select-ano').on('select2:select', function(e) {});
     /* Fim listeners select2 */
 
     function carregaMarcas(tipoveiculo) {
@@ -143,47 +178,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 carregaItensSelect(elSelectAno, data)
             });
     }
-
-    /* Coloca os dados da requisição na tabela */
-    function carregaTabela(tipoveiculo) {
-        axios.get(baseurl + tipoveiculo + `/marcas/${elSelectMarca.value}/modelos/${elSelectModelo.value}/anos/${elSelectAno.value}`)
-            .then(response => {
-                infos = response.data;
-                data = `<tr>
-                <th scope="row" style="background-color: rgba(0,0,0,0.5); color: white;">Valor</th>
-                <th scope="row" class="price-property"><h5 style="font-weight: bold;">${infos.Valor}</h5></th>
-            </tr>
-            <tr>
-                <th scope="row" style="background-color: rgba(0,0,0,0.5); color: white">Marca</th>
-                <th scope="row">${infos.Marca}</th>
-            </tr>
-            <tr>
-                <th scope="row" style="background-color: rgba(0,0,0,0.5); color: white">Modelo</th>
-                <th scope="row">${infos.Modelo}</th>
-            </tr>
-            <tr>
-                <th scope="row" style="background-color: rgba(0,0,0,0.5); color: white">Ano do modelo</th>
-                <th scope="row">${infos.AnoModelo}</th>
-            </tr>
-            <tr>
-                <th scope="row" style="background-color: rgba(0,0,0,0.5); color: white">Combustível</th>
-                <th scope="row">${infos.Combustivel}</th>
-            </tr>
-            <tr>
-                <th scope="row" style="background-color: rgba(0,0,0,0.5); color: white">Código FIPE</th>
-                <th scope="row">${infos.CodigoFipe}</th>
-            </tr>
-            <tr>
-                <th scope="row"></th>
-                <th scope="row"></th>
-            </tr>`;
-                elTBody.innerHTML = data;
-                window.location.href = "#valorsection";
-            });
-    }
 });
 
-/* Carrega os itens do select2 (Marca / Modelo / Ano) */
 function carregaItensSelect(select, data) {
     select.innerHTML = data;
 }

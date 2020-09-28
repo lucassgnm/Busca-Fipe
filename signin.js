@@ -1,3 +1,7 @@
+toastr.options = {
+    "positionClass": "toast-bottom-full-width",
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     /* Configs */
     /* Adicionar padding top para mostrar o conteúdo atrás da barra de navegação */
@@ -27,8 +31,77 @@ $(document).ready(function() {
         $(".prev").css({ 'display': 'none' });
     }
 
+    var permitidoemail = false;
+    var permitidosenha = false;
+    var permitidopais = false;
+
+    document.querySelector('#btn-email').addEventListener('click', function() {
+        validacaoEmail(document.querySelector('#email'));
+    })
+
+    document.querySelector('#btn-senha').addEventListener('click', function() {
+        validacaoSenha(document.querySelector('#pwd'));
+    })
+
+
     // Next button
-    $(".next-button").click(function() {
+    $(".next-button1").click(function() {
+        if (permitidoemail == true) {
+            current_fs = $(this).parent().parent();
+            next_fs = $(this).parent().parent().next();
+
+            $(".prev").css({ 'display': 'block' });
+
+            $(current_fs).removeClass("show");
+            $(next_fs).addClass("show");
+
+            $("#progressbar li").eq($(".card2").index(next_fs)).addClass("active");
+
+            current_fs.animate({}, {
+                step: function() {
+
+                    current_fs.css({
+                        'display': 'none',
+                        'position': 'relative'
+                    });
+
+                    next_fs.css({
+                        'display': 'block'
+                    });
+                }
+            });
+        }
+    });
+
+    $(".next-button2").click(function() {
+        if (permitidosenha == true) {
+            current_fs = $(this).parent().parent();
+            next_fs = $(this).parent().parent().next();
+
+            $(".prev").css({ 'display': 'block' });
+
+            $(current_fs).removeClass("show");
+            $(next_fs).addClass("show");
+
+            $("#progressbar li").eq($(".card2").index(next_fs)).addClass("active");
+
+            current_fs.animate({}, {
+                step: function() {
+
+                    current_fs.css({
+                        'display': 'none',
+                        'position': 'relative'
+                    });
+
+                    next_fs.css({
+                        'display': 'block'
+                    });
+                }
+            });
+        }
+    });
+
+    $(".next-button3").click(function() {
 
         current_fs = $(this).parent().parent();
         next_fs = $(this).parent().parent().next();
@@ -87,4 +160,34 @@ $(document).ready(function() {
         });
     });
 
+    function validacaoEmail(field) {
+        usuario = field.value.substring(0, field.value.indexOf("@"));
+        dominio = field.value.substring(field.value.indexOf("@") + 1, field.value.length);
+
+        if ((usuario.length >= 1) &&
+            (dominio.length >= 3) &&
+            (usuario.search("@") == -1) &&
+            (dominio.search("@") == -1) &&
+            (usuario.search(" ") == -1) &&
+            (dominio.search(" ") == -1) &&
+            (dominio.search(".") != -1) &&
+            (dominio.indexOf(".") >= 1) &&
+            (dominio.lastIndexOf(".") < dominio.length - 1)) {
+            permitidoemail = true;
+        } else {
+            permitidoemail = false;
+            toastr.error("E-mail inválido");
+        }
+    }
+
+    function validacaoSenha(field) {
+        regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+
+        if (regex.test(field.value)) {
+            permitidosenha = true;
+        } else {
+            permitidosenha = false;
+            toastr.error("Senha inválida");
+        }
+    }
 });

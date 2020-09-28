@@ -1,0 +1,111 @@
+.card0 {
+    background-color: #F5F5F5;
+    border-radius: 8px;
+    z-index: 0
+}
+
+.card00 {
+    z-index: 0
+}
+
+.card1 {
+    margin-left: 140px;
+    z-index: 0;
+    border-right: 1px solid #F5F5F5
+}
+
+.card2 {
+    display: none
+}
+
+.card2.show {
+    display: block
+}
+
+@media screen and (max-width: 912px) {
+    .card00 {
+        padding-top: 30px
+    }
+    .card1 {
+        border: none;
+        margin-left: 50px
+    }
+    .card2 {
+        border-bottom: 1px solid #F5F5F5;
+        margin-bottom: 25px
+    }
+    .social {
+        height: 30px;
+        width: 30px;
+        font-size: 15px;
+        padding-top: 8px;
+        margin-top: 7px
+    }
+    .get-bonus {
+        margin-top: 40px !important;
+        margin-left: 75px
+    }
+    #progressbar {
+        left: -25px
+    }
+}
+
+.font-bold {
+    color: #000;
+}
+
+.pic {
+    width: 230px;
+    height: 130px
+}
+
+.index-selects {
+    width: 100%;
+}
+
+.select-div {
+    width: 100% !important;
+}
+
+.select2-container .select2-selection--single {
+    height: 40px;
+    font-size: 18px;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+    line-height: 39px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    margin-top: 4px;
+}
+
+.row-select {
+    margin: 5px;
+}
+
+.flex-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buton-options {
+    margin: 10px;
+    margin-right: 30px;
+    width: 100%;
+}
+
+.flex-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-amber:not([disabled]):not(.disabled):active,
+.btn-amber:not([disabled]):not(.disabled).active,
+.show>.btn-amber.dropdown-toggle {
+    background-color: #d33d4a !important;
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}

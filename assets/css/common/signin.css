@@ -25,7 +25,7 @@
 .social {
     border-radius: 50%;
     background-color: #FFCDD2;
-    color: #E53935;
+    color: #ff3547 !important;
     height: 47px;
     width: 47px;
     padding-top: 16px;
@@ -54,12 +54,12 @@ select:focus {
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    border: 1px solid #E53935 !important;
+    border: 1px solid #ff3547 !important;
     outline-width: 0 !important
 }
 
 .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-    background-color: #E53935
+    background-color: #ff3547
 }
 
 .form-group {
@@ -85,7 +85,7 @@ select:focus {
     background-color: #fff
 }
 
-.next-button {
+.next-button1 {
     width: 18%;
     height: 50px;
     background-color: #BDBDBD;
@@ -95,8 +95,38 @@ select:focus {
     cursor: pointer
 }
 
-.next-button:hover {
-    background-color: #E53935;
+.next-button1:hover {
+    background-color: #ff3547;
+    color: #fff
+}
+
+.next-button2 {
+    width: 18%;
+    height: 50px;
+    background-color: #BDBDBD;
+    color: #fff;
+    border-radius: 6px;
+    padding: 10px;
+    cursor: pointer
+}
+
+.next-button2:hover {
+    background-color: #ff3547;
+    color: #fff
+}
+
+.next-button3 {
+    width: 18%;
+    height: 50px;
+    background-color: #BDBDBD;
+    color: #fff;
+    border-radius: 6px;
+    padding: 10px;
+    cursor: pointer
+}
+
+.next-button3:hover {
+    background-color: #ff3547;
     color: #fff
 }
 
@@ -106,14 +136,14 @@ select:focus {
 
 .pic {
     width: 230px;
-    height: 110px
+    height: 130px
 }
 
 #progressbar {
     position: absolute;
     left: 35px;
     overflow: hidden;
-    color: #E53935
+    color: #ff3547
 }
 
 #progressbar li {
@@ -139,7 +169,7 @@ select:focus {
     display: block;
     font-size: 20px;
     background: #fff;
-    border: 2px solid #E53935;
+    border: 2px solid #ff3547;
     border-radius: 50%;
     margin: auto
 }
@@ -179,11 +209,11 @@ select:focus {
 }
 
 #progressbar li.active:after {
-    background: #E53935
+    background: #ff3547
 }
 
 #progressbar li.active:before {
-    background: #E53935;
+    background: #ff3547;
     font-family: FontAwesome;
     content: "\f00c"
 }
@@ -202,7 +232,7 @@ select:focus {
 }
 
 .prev:hover {
-    color: #D50000 !important
+    color: #ff3547 !important
 }
 
 @media screen and (max-width: 912px) {
@@ -231,4 +261,8 @@ select:focus {
     #progressbar {
         left: -25px
     }
+}
+
+.font-bold {
+    color: #000;
 }

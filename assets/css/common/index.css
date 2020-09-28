@@ -17,26 +17,6 @@
     justify-content: center;
 }
 
-.fa-color-icons {
-    color: #ffA000 !important;
-}
-
-li.completed::after {
-    background-color: #ffA000 !important;
-}
-
-li.active::before {
-    background-color: #ffA000 !important;
-}
-
-li.active::after {
-    background-color: #ffA000 !important;
-}
-
-li.completed::before {
-    background-color: #ffA000 !important;
-}
-
 .select2-container .select2-selection--single {
     height: 40px;
     font-size: 18px;
@@ -61,4 +41,12 @@ table {
 
 span.icon-button {
     display: block;
+}
+
+.btn-amber:not([disabled]):not(.disabled):active,
+.btn-amber:not([disabled]):not(.disabled).active,
+.show>.btn-amber.dropdown-toggle {
+    background-color: #d33d4a !important;
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
