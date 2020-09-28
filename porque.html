@@ -16,7 +16,7 @@
     <link href="assets/css/select2.min.css" rel="stylesheet">
     <!-- Custom styles (optional) -->
     <link href="assets/css/styles.css" rel="stylesheet">
-    <link href="assets/css/common/index.css" rel="stylesheet">
+    <link href="assets/css/common/porque.css" rel="stylesheet">
 </head>
 
 <body>
@@ -30,7 +30,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link waves-effect waves-light" href="./">Início<span
                             class="sr-only">(current)</span></a>
                 </li>
@@ -40,7 +40,7 @@
                 <li class="nav-item">
                     <a class="nav-link waves-effect waves-light" href="opiniao.html">Opinião do dono</a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown active">
                     <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Informações</a>
                     <div class="dropdown-menu dropdown-info" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item waves-effect waves-light" href="listaopinioes.html">Melhores avaliados</a>
@@ -53,58 +53,53 @@
     <!-- /Navbar -->
 
     <main>
-        <div class="container-fluid">
-            <div class="row text-center">
-                <div class="col offset-md-2 col-md-8 offset-lg-3 col-lg-6">
-                    <!--Panel-->
-                    <div class="card card-price">
-                        <div class="card-header danger-color white-text">
-                            Saiba o preço médio do seu veículo:
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-4 text-center buton-options">
-                                    <button type="button" id="btn-opt-motos" class="btn btn-rounded btn-amber btn-block"><i class="fas fa-motorcycle" aria-hidden="true"></i><span class="icon-button">MOTO</span></button>
-                                </div>
-                                <div class="col-lg-4 col-md-4 text-center buton-options">
-                                    <button type="button" id="btn-opt-carros" class=" btn btn-rounded btn-amber btn-block"><i class="fas fa-car" aria-hidden="true "></i><span class="icon-button">CARRO</span></button>
-                                </div>
-                                <div class="col-lg-4 col-md-4 text-center buton-options">
-                                    <button type="button" id="btn-opt-caminhoes" class="btn btn-rounded btn-amber btn-block"><i class="fas fa-truck-moving" aria-hidden="true"></i><span class="icon-button">CAMINHÃO</span></button>
-                                </div>
-                            </div>
-                            <div class="row row-select flex-box">
-                                <select class="select-marca index-selects" name="state">
-                                    <!-- Select options -->
-                                </select>
-                            </div>
-                            <div class="row row-select flex-box">
-                                <select class="select-modelo index-selects" name="state">
-                                    <!-- Select options -->
-                                </select>
-                            </div>
-                            <div class="row row-select flex-box">
-                                <select class="select-ano index-selects" name="state">
-                                    <!-- Select options -->
-                                </select>
+        <div class='container-fluid mx-auto mt-5 col-md-10 mt-100'>
+            <div class="header">
+                <div class="title">Opiniões Importam</div>
+                <p><small class="text-muted" style="font-size: 15px">
+                    Somos uma empresa doméstica, globalmente conectada,
+                    HUB experimental que se orgulha de sua criatividade
+                    e inovação.</u> </small></p>
+            </div>
+            <div class="row" style="justify-content: center">
+                <div class="card col-md-3 mt-100">
+                    <div class="card-content">
+                        <div class="card-body p-0">
+                            <div class="profile"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574583336/AAA/4.jpg"> </div>
+                            <div class="card-title"> José Barbosa<br /> <small>Mecânico</small> </div>
+                            <div class="card-subtitle">
+                                <p> <small class="text-muted"> Esse site é maravilhoso, eles conseguem nos trazer informações muito atualizadas! </small> </p>
                             </div>
                         </div>
-                        <section id="valorsection">
-                            <div class="card-footer text-muted danger-color white-text">
-                                <div class="row">
-                                    <div class="col">
-                                        <table class="table">
-                                            <tbody>
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
                     </div>
-                    <!--/.Panel-->
                 </div>
+                <div class="card col-md-3 mt-100">
+                    <div class="card-content">
+                        <div class="card-body p-0">
+                            <div class="profile"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574583319/AAA/3.jpg"> </div>
+                            <div class="card-title"> Elias Nogueira<br /> <small>Estudante</small> </div>
+                            <div class="card-subtitle">
+                                <p> <small class="text-muted"> É muito bom contribuir com avaliações nesse site, é facil rápido e assim ajudo outras pessoas. </small> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-md-3 mt-100">
+                    <div class="card-content">
+                        <div class="card-body p-0">
+                            <div class="profile"> <img src="assets/images/pessoas/renata.jpg"> </div>
+                            <div class="card-title"> Renata Silva<br /> <small>Diretora de RH</small> </div>
+                            <div class="card-subtitle">
+                                <p> <small class="text-muted"> É incrivel como os dados estão claros! Eu uso e recomendo. </small> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ft">
+                <a href="opiniao.html">
+                    <div class="btn btn-amber">Avalie você tambem!</div>
+                </a>
             </div>
         </div>
     </main>
@@ -179,7 +174,7 @@
     <!-- Axios -->
     <script type="text/javascript" src="assets/js/axios.min.js"></script>
     <!-- Custom JavaScript -->
-    <script type="text/javascript " src="index.js"></script>
+    <script type="text/javascript " src="porque.js"></script>
 </body>
 
 </html>
