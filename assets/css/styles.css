@@ -1,6 +1,5 @@
 body {
-    background: linear-gradient(to right, #f84655, #480048);
-    min-height: 100vh;
+    background-image: url("../images/background.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
