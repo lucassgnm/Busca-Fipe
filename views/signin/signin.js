@@ -3,6 +3,11 @@ toastr.options = {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    var elSelPaises = document.querySelector('.sel-paises');
+
+    elSelPaises.innerHTML = '<option value="volvo">Volvo</option>';
+
+
     /* Configs */
     /* Adicionar padding top para mostrar o conteúdo atrás da barra de navegação */
     $('body').css('padding-top', $('.navbar').outerHeight() + 'px')

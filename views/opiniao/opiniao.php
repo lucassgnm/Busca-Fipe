@@ -40,16 +40,16 @@
                         class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light" href="signin.html">Cadastre-se</a>
+                    <a class="nav-link waves-effect waves-light" href="<?= URL ?>signin">Cadastre-se</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link waves-effect waves-light" href="opiniao.html">Opinião do dono</a>
+                    <a class="nav-link waves-effect waves-light" href="<?= URL ?>opiniao">Opinião do dono</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Informações</a>
                     <div class="dropdown-menu dropdown-info" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item waves-effect waves-light" href="listaopinioes.html">Melhores avaliados</a>
-                        <a class="dropdown-item waves-effect waves-light" href="porque.html">Por que avaliar?</a>
+                        <a class="dropdown-item waves-effect waves-light" href="<?= URL ?>listaopinioes">Melhores avaliados</a>
+                        <a class="dropdown-item waves-effect waves-light" href="<?= URL ?>porque">Por que avaliar?</a>
                     </div>
                 </li>
             </ul>
@@ -247,7 +247,7 @@
     <!-- Rating -->
     <script type="text/javascript" src="assets/js/addons/rating.min.js"></script>
     <!-- Custom JavaScript -->
-    <script type="text/javascript " src="opiniao.js"></script>
+    <script type="text/javascript " src="views/opiniao/opiniao.js"></script>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></script>
 </body>

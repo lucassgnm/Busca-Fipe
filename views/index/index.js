@@ -52,21 +52,18 @@ document.addEventListener("DOMContentLoaded", () => {
         elTBody.innerHTML = "";
         opt = "motos";
         carregaMarcas("motos");
-        $(".select-marca").prop("disabled", false);
     });
 
     document.querySelector("#btn-opt-carros").addEventListener("click", function(e) {
         elTBody.innerHTML = "";
         opt = "carros";
         carregaMarcas("carros");
-        $(".select-marca").prop("disabled", false);
     });
 
     document.querySelector("#btn-opt-caminhoes").addEventListener("click", function(e) {
         elTBody.innerHTML = "";
         opt = "caminhoes";
         carregaMarcas("caminhoes");
-        $(".select-marca").prop("disabled", false);
     });
     /* Fim listeners */
 
@@ -103,6 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
                 /* Popula os dados (data) no select */
                 carregaItensSelect(elSelectMarca, data)
+                $(".select-marca").prop("disabled", false);
             });
     }
 

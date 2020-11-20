@@ -36,16 +36,16 @@
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light" href="signin.html">Cadastre-se</a>
+                    <a class="nav-link waves-effect waves-light" href="<?= URL ?>signin">Cadastre-se</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light" href="opiniao.html">Opinião do dono</a>
+                    <a class="nav-link waves-effect waves-light" href="<?= URL ?>opiniao">Opinião do dono</a>
                 </li>
                 <li class="nav-item dropdown active">
                     <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Informações</a>
                     <div class="dropdown-menu dropdown-info" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item waves-effect waves-light" href="listaopinioes.html">Melhores avaliados</a>
-                        <a class="dropdown-item waves-effect waves-light" href="porque.html">Por que avaliar?</a>
+                        <a class="dropdown-item waves-effect waves-light" href="<?= URL ?>listaopinioes">Melhores avaliados</a>
+                        <a class="dropdown-item waves-effect waves-light" href="<?= URL ?>porque">Por que avaliar?</a>
                     </div>
                 </li>
             </ul>
@@ -131,7 +131,7 @@
     <!-- Axios -->
     <script type="text/javascript" src="assets/js/axios.min.js"></script>
     <!-- Custom JavaScript -->
-    <script type="text/javascript " src="porque.js"></script>
+    <script type="text/javascript " src="views/porque/porque.js"></script>
 </body>
 
 </html>
