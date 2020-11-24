@@ -140,9 +140,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     $('#btnEnviaAval').on('click', function() {
         elTipoVeiculo = document.querySelectorAll(".active")[1].value;
-        elMarca = document.getElementById("marca").value;
-        elModelo = document.getElementById("modelo").value;
-        elAno = document.getElementById("ano").value;
+        elMarca = $('#marca').find(":selected").text();
+        elModelo = $('#modelo').find(":selected").text();
+        elAno = $('#ano').find(":selected").text();
         elNotaGeral = $("input[type='radio']:checked").val();
         elPtsPositivos = document.getElementById("txtPtsPositivos").value;
         elptsNegativos = document.getElementById("txtPtsNegativos").value;

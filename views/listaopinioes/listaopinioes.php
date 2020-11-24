@@ -34,10 +34,11 @@
                 <li class="nav-item">
                     <a class="nav-link waves-effect waves-light" href="./">Início<span class="sr-only">(current)</span></a>
                 </li>
-                <?php Session::init(); if (!Session::get("logado")) { ?>
-                <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light" href="<?= URL ?>signin">Cadastre-se</a>
-                </li>
+                <?php Session::init();
+                if (!Session::get("logado")) { ?>
+                    <li class="nav-item">
+                        <a class="nav-link waves-effect waves-light" href="<?= URL ?>signin">Cadastre-se</a>
+                    </li>
                 <?php } ?>
                 <li class="nav-item">
                     <a class="nav-link waves-effect waves-light" href="<?= URL ?>opiniao">Opinião do dono</a>
@@ -64,7 +65,7 @@
                         </div>
                     </li>
                 </ul>
-                <?php } else { ?>
+            <?php } else { ?>
                 <ul class="navbar-nav ml-auto nav-flex-icons">
                     <li class="nav-item dropdown">
                         <a class="dropdown-item" href="login">Fazer login</a>
@@ -79,104 +80,11 @@
         <div class="container py-5">
             <div class="row text-center text-white mb-5">
                 <div class="col-lg-7 mx-auto">
-                    <h1 class="display-4">Melhores avaliados <i class="fas fa-star-half-alt"></i></h1>
+                    <h1 class="display-4">Avaliacoes <i class="fas fa-star-half-alt"></i></h1>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <!-- List group-->
-                    <ul class="list-group shadow">
-                        <!-- list group item-->
-                        <li class="list-group-item">
-                            <!-- Custom content-->
-                            <div class="media align-items-lg-center flex-column flex-lg-row p-3">
-                                <div class="media-body order-2 order-lg-1">
-                                    <h5 class="mt-0 font-weight-bold mb-2">Toyota Corolla 2020</h5>
-                                    <p class="font-italic text-muted mb-0 small">Dimensões: 4.630 mm C x 1.780 mm L x 1.455 mm A</p>
-                                    <div class="d-flex align-items-center justify-content-between mt-1">
-                                        <h6 class="font-weight-bold my-2">A partir de R$ 110.190</h6>
-                                        <ul class="list-inline small">
-                                            <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                                            <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                                            <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                                            <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                                            <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                                        </ul>
-                                    </div>
-                                </div><img src="assets/images/carros/corolla.jpg" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
-                            </div>
-                            <!-- End -->
-                        </li>
-                        <!-- End -->
-                        <!-- list group item-->
-                        <li class="list-group-item">
-                            <!-- Custom content-->
-                            <div class="media align-items-lg-center flex-column flex-lg-row p-3">
-                                <div class="media-body order-2 order-lg-1">
-                                    <h5 class="mt-0 font-weight-bold mb-2">Renault Kwid 2020</h5>
-                                    <p class="font-italic text-muted mb-0 small">Dimensões: 3.680 mm C x 1.579 mm L x 1.474 mm A</p>
-                                    <div class="d-flex align-items-center justify-content-between mt-1">
-                                        <h6 class="font-weight-bold my-2">A partir de R$ 37.490</h6>
-                                        <ul class="list-inline small">
-                                            <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                                            <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                                            <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                                            <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                                            <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                                        </ul>
-                                    </div>
-                                </div><img src="assets/images/carros/kwid.jpg" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
-                            </div>
-                            <!-- End -->
-                        </li>
-                        <!-- End -->
-                        <!-- list group item -->
-                        <li class="list-group-item">
-                            <!-- Custom content-->
-                            <div class="media align-items-lg-center flex-column flex-lg-row p-3">
-                                <div class="media-body order-2 order-lg-1">
-                                    <h5 class="mt-0 font-weight-bold mb-2">Hyundai HB20 2020</h5>
-                                    <p class="font-italic text-muted mb-0 small">Dimensões: 3.940-4.260 mm C x 1.720-1.740 mm L x 1.470-1.540 mm A</p>
-                                    <div class="d-flex align-items-center justify-content-between mt-1">
-                                        <h6 class="font-weight-bold my-2">A partir de R$ 49.590</h6>
-                                        <ul class="list-inline small">
-                                            <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                                            <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                                            <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                                            <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                                            <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                                        </ul>
-                                    </div>
-                                </div><img src="assets/images/carros/hb20.jpg" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
-                            </div>
-                            <!-- End -->
-                        </li>
-                        <!-- End -->
-                        <!-- list group item -->
-                        <li class="list-group-item">
-                            <!-- Custom content-->
-                            <div class="media align-items-lg-center flex-column flex-lg-row p-3">
-                                <div class="media-body order-2 order-lg-1">
-                                    <h5 class="mt-0 font-weight-bold mb-2">Chevrolet Onix 2020</h5>
-                                    <p class="font-italic text-muted mb-0 small">Dimensões: 3.933-4.163 mm C x 1.705-1.737 mm L x 1.471-1.554 mm A</p>
-                                    <div class="d-flex align-items-center justify-content-between mt-1">
-                                        <h6 class="font-weight-bold my-2">A partir de R$ 55.390</h6>
-                                        <ul class="list-inline small">
-                                            <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                                            <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                                            <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                                            <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                                            <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                                        </ul>
-                                    </div>
-                                </div><img src="assets/images/carros/onix.jpg" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
-                            </div>
-                            <!-- End -->
-                        </li>
-                        <!-- End -->
-                    </ul>
-                    <!-- End -->
-                </div>
+            <div class="row" id="listaCarrosTable">
+                
             </div>
         </div>
     </main>

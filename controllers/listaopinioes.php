@@ -12,5 +12,9 @@ class ListaOpinioes extends Controller {
         $this->view->render('listaopinioes/listaopinioes');
 		//$this->view->render('footer');
     }
+
+    function run() {
+        $this->model->run();
+    }
     
 }

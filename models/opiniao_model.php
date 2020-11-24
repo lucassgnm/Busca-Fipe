@@ -38,9 +38,9 @@ class Opiniao_Model extends Model
             $this->db->insert('opinioes', array(
                 'email' => $email,
                 'tipoveiculo' => (int)$tipoveiculo,
-                'marca' => (int)$marca,
-                'modelo' => (int)$modelo,
-                'ano' => (int)$ano,
+                'marca' => $marca,
+                'modelo' => $modelo,
+                'ano' => $ano,
                 'notageral' => $notageral,
                 'ptspositivos' => $ptspositivos,
                 'ptsnegativos' => $ptsnegativos,
