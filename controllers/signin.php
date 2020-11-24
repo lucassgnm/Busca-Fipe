@@ -12,5 +12,13 @@ class Signin extends Controller {
         $this->view->render('signin/signin');
 		//$this->view->render('footer');
     }
+
+    function run() {
+        $this->model->run();
+    }
+
+    function getPaises() {
+        $this->model->getPaises();
+    }
     
 }

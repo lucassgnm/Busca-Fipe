@@ -5,50 +5,6 @@ toastr.options = {
 
 document.addEventListener("DOMContentLoaded", () => {
     /* Configs */
-    // Rating Initialization
-    $(document).ready(function() {
-        $('.rateme1').mdbRate();
-    });
-
-    $(document).ready(function() {
-        $('.rateme2').mdbRate();
-    });
-
-    $(document).ready(function() {
-        $('.rateme3').mdbRate();
-    });
-
-    $(document).ready(function() {
-        $('.rateme4').mdbRate();
-    });
-
-    $(document).ready(function() {
-        $('.rateme5').mdbRate();
-    });
-
-    $(document).ready(function() {
-        $('.rateme6').mdbRate();
-    });
-
-    $(document).ready(function() {
-        $('.rateme7').mdbRate();
-    });
-
-    $(document).ready(function() {
-        $('.rateme8').mdbRate();
-    });
-
-    $(document).ready(function() {
-        $('.rateme9').mdbRate();
-    });
-
-    $(document).ready(function() {
-        $('.rateme10').mdbRate();
-    });
-
-    $(document).ready(function() {
-        $('.rateme11').mdbRate();
-    });
 
     /* Muda o aspecto do botão quando ativo */
     $('.btn-type').on('click', function() {
@@ -99,19 +55,16 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#btn-opt-motos").addEventListener("click", function(e) {
         opt = "motos";
         carregaMarcas("motos");
-        $(".select-marca").prop("disabled", false);
     });
 
     document.querySelector("#btn-opt-carros").addEventListener("click", function(e) {
         opt = "carros";
         carregaMarcas("carros");
-        $(".select-marca").prop("disabled", false);
     });
 
     document.querySelector("#btn-opt-caminhoes").addEventListener("click", function(e) {
         opt = "caminhoes";
         carregaMarcas("caminhoes");
-        $(".select-marca").prop("disabled", false);
     });
     /* Fim listeners */
 
@@ -143,6 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
                 /* Popula os dados (data) no select */
                 carregaItensSelect(elSelectMarca, data)
+                $(".select-marca").prop("disabled", false);
             });
     }
 
@@ -184,8 +138,34 @@ document.addEventListener("DOMContentLoaded", () => {
             });
     }
 
-    document.querySelector('#btnEnviaAval').addEventListener('click', function() {
-        toastr.success('Obrigado! Sua avaliação foi cadastrada com sucesso.')
+    $('#btnEnviaAval').on('click', function() {
+        elTipoVeiculo = document.querySelectorAll(".active")[1].value;
+        elMarca = document.getElementById("marca").value;
+        elModelo = document.getElementById("modelo").value;
+        elAno = document.getElementById("ano").value;
+        elNotaGeral = $("input[type='radio']:checked").val();
+        elPtsPositivos = document.getElementById("txtPtsPositivos").value;
+        elptsNegativos = document.getElementById("txtPtsNegativos").value;
+        elDefeitosApr = document.getElementById("txtDefeitosApr").value;
+
+        $.post("opiniao/run", {
+            tipoveiculo: elTipoVeiculo,
+            marca: elMarca,
+            modelo: elModelo,
+            ano: elAno,
+            notageral: elNotaGeral,
+            ptspositivos: elPtsPositivos,
+            ptsnegativos: elptsNegativos,
+            defapr: elDefeitosApr,
+        }, function(data) {
+            data = JSON.parse(data);
+            if (data.code = 1) {
+                alert(data.msg);
+                window.location.href = "/";
+            } else {
+                toastr.warning(data.msg);
+            }
+        });
     });
 });
 

@@ -9,7 +9,7 @@ define('LIBS', 'libs/');
 //conf. da conexao com o BD
 define('DB_TYPE', 'mysql');
 define('DB_HOST', 'localhost:3306');
-define('DB_NAME', 'escola');
+define('DB_NAME', 'buscafipe');
 define('DB_USER', 'root');
-define('DB_PASS', 'aula');
+define('DB_PASS', '');
 

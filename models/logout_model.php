@@ -7,15 +7,16 @@ class Logout_Model extends Model
         parent::__construct();
     }
 
-    public function logout()
+    public function run()
     {
-        
-            // logout
-            Session::init();
-			Session::destroy();
-			//echo("OK");
-			
-        
+
+        // logout
+        Session::init();
+        Session::destroy();
+        //echo("OK");
+
+        header("Location: " . URL);
+
+        die();
     }
-    
 }

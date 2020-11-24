@@ -32,12 +32,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light" href="./">Início<span
-                            class="sr-only">(current)</span></a>
+                    <a class="nav-link waves-effect waves-light" href="./">Início<span class="sr-only">(current)</span></a>
                 </li>
+                <?php Session::init(); if (!Session::get("logado")) { ?>
                 <li class="nav-item">
                     <a class="nav-link waves-effect waves-light" href="<?= URL ?>signin">Cadastre-se</a>
                 </li>
+                <?php } ?>
                 <li class="nav-item">
                     <a class="nav-link waves-effect waves-light" href="<?= URL ?>opiniao">Opinião do dono</a>
                 </li>
@@ -49,6 +50,27 @@
                     </div>
                 </li>
             </ul>
+            <?php Session::init();
+            if (Session::get("logado") == true) { ?>
+                <ul class="navbar-nav ml-auto nav-flex-icons">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                            <a class="dropdown-item" href="#"><?php Session::init();
+                                                                echo Session::get("email") ?></a>
+                            <a class="dropdown-item" href="<?= URL ?>logout/run">Sair</a>
+                        </div>
+                    </li>
+                </ul>
+                <?php } else { ?>
+                <ul class="navbar-nav ml-auto nav-flex-icons">
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-item" href="login">Fazer login</a>
+                    </li>
+                </ul>
+            <?php } ?>
         </div>
     </nav>
     <!-- /Navbar -->

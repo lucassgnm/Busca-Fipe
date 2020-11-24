@@ -38,9 +38,11 @@
                 <li class="nav-item">
                     <a class="nav-link waves-effect waves-light" href="./">Início<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item active">
+                <?php Session::init(); if (!Session::get("logado")) { ?>
+                <li class="nav-item">
                     <a class="nav-link waves-effect waves-light" href="<?= URL ?>signin">Cadastre-se</a>
                 </li>
+                <?php } ?>
                 <li class="nav-item">
                     <a class="nav-link waves-effect waves-light" href="<?= URL ?>opiniao">Opinião do dono</a>
                 </li>
@@ -52,6 +54,27 @@
                     </div>
                 </li>
             </ul>
+            <?php Session::init();
+            if (Session::get("logado") == true) { ?>
+                <ul class="navbar-nav ml-auto nav-flex-icons">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                            <a class="dropdown-item" href="#"><?php Session::init();
+                                                                echo Session::get("email") ?></a>
+                            <a class="dropdown-item" href="<?= URL ?>logout/run">Sair</a>
+                        </div>
+                    </li>
+                </ul>
+                <?php } else { ?>
+                <ul class="navbar-nav ml-auto nav-flex-icons">
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-item" href="login">Fazer login</a>
+                    </li>
+                </ul>
+            <?php } ?>
         </div>
     </nav>
     <!-- /Navbar -->
@@ -123,13 +146,13 @@
                                                 <div class="row px-3 mt-3">
                                                     <p class="mb-0">Selecione seu país</p>
                                                     <div class="form-group mt-3 mb-4">
-                                                        <div class="select mb-3"> 
-                                                            <select name="account" class="form-control sel-paises">
-                                                                
-                                                            </select> 
+                                                        <div class="select mb-3">
+                                                            <select name="account" id="selPaises" class="form-control sel-paises">
+
+                                                            </select>
                                                         </div>
                                                     </div>
-                                                    <div class="next-button3 text-center mt-3 ml-2"> <span class="fa fa-arrow-right"></span> </div>
+                                                    <div class="next-button3 text-center mt-3 ml-2" id="btnOkCadastro"> <span class="fa fa-arrow-right"></span> </div>
                                                 </div>
                                             </div>
                                             <div class="card2 ml-2">

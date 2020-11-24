@@ -7,25 +7,37 @@ class Login_Model extends Model
         parent::__construct();
     }
 
-    public function ver()
+    public function run()
     {
-		$dados=array(':cpf' => $_POST['txtcpf'],':senha' => $_POST['txtsenha']);
-        $result = $this->db->select("SELECT cpf,nome FROM dbclientes.cliente WHERE 
-                cpf = :cpf AND senha = sha2(:senha,256)",$dados);
-                
-        $count = count($result);
+        try {
+            $email = trim($_POST['email']);
+            $pwd = $_POST['pwd'];
 
-        if ($count > 0) {
-            // login
-            Session::init();
-            Session::set('nome', $result[0]->nome);
-            Session::set('logado', true);
-            Session::set('cpf', $result[0]->cpf);
-            echo("OK");
-        } else {
-            echo("Dados Incorretos.");
+            $result = $this->db->select("select count(*) totalusuarios
+                                        from buscafipe.usuarios u 
+                                        where u.email = :email and u.senha = :senha", array(":email" => $email, ":senha" => hash("sha256", $pwd)));
+
+            if ($result[0]->totalusuarios == 1) {
+                $msg = array(
+                    "code" => 1,
+                    "msg" => "Login permitido."
+                );
+                Session::init();
+                Session::set('email', $email);
+                Session::set('logado', true);
+            } else {
+                $msg = array(
+                    "code" => 0,
+                    "msg" => "Login não permitido."
+                );
+            }
+        } catch (Exception $e) {
+
+            $msg = array(
+                "code" => 0,
+                "msg" => "Houve um erro: " . $e
+            );
         }
-        
+        echo json_encode($msg);
     }
-    
 }

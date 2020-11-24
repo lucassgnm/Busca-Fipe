@@ -3,10 +3,7 @@ toastr.options = {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    var elSelPaises = document.querySelector('.sel-paises');
-
-    elSelPaises.innerHTML = '<option value="volvo">Volvo</option>';
-
+    carregaPaises();
 
     /* Configs */
     /* Adicionar padding top para mostrar o conteúdo atrás da barra de navegação */
@@ -28,6 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 $(document).ready(function() {
+
+
 
     var current_fs, next_fs, previous_fs;
 
@@ -195,4 +194,44 @@ $(document).ready(function() {
             toastr.error("Senha inválida");
         }
     }
+
+
+    $("#btnOkCadastro").click(function() {
+        var elEmail = $("#email").val();
+        var elPwd = $("#pwd").val();
+        var elPais = $("#selPaises").val();
+
+
+        $.post("signin/run", {
+            email: elEmail,
+            pwd: elPwd,
+            pais: elPais
+        }, function(data) {
+            data = JSON.parse(data);
+            if (data.code = 1) {
+                toastr.success(data.msg);
+                window.location.href = "/";
+            } else {
+                toastr.warning(data.msg);
+            }
+        });
+    });
 });
+
+function carregaPaises() {
+    axios.post('/signin/getPaises')
+        .then(response => {
+            paises = response.data;
+            var elSelPaises = document.querySelector('.sel-paises');
+
+            let tmp = "<option selected disabled>Escolha</option>";
+            for (var pais of paises) {
+
+                tmp += `<option value="${pais.id}">${pais.nome_pt}</option>`;
+            }
+            elSelPaises.innerHTML = tmp;
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+}

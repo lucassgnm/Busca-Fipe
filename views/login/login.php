@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="shortcut icon" href="assets/images/buscaicon.ico" />
-    <title>Início - BUSCA FIPE</title>
+    <title>Login - BUSCA FIPE</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -80,39 +80,19 @@
     <main>
         <div class="container-fluid">
             <div class="row text-center">
-                <div class="col offset-md-2 col-md-8 offset-lg-3 col-lg-6">
+                <div class="col offset-md-2 col-md-8 offset-lg-3 col-lg-6" style="margin-top: 50px;">
                     <!--Panel-->
                     <div class="card card-price">
                         <div class="card-header danger-color white-text">
-                            Saiba o preço médio do seu veículo:
+                            Fazer login
                         </div>
                         <div class="card-body">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-4 text-center buton-options">
-                                    <button type="button" id="btn-opt-motos" class="btn btn-rounded btn-amber btn-block"><i class="fas fa-motorcycle" aria-hidden="true"></i><span class="icon-button">MOTO</span></button>
-                                </div>
-                                <div class="col-lg-4 col-md-4 text-center buton-options">
-                                    <button type="button" id="btn-opt-carros" class=" btn btn-rounded btn-amber btn-block"><i class="fas fa-car" aria-hidden="true "></i><span class="icon-button">CARRO</span></button>
-                                </div>
-                                <div class="col-lg-4 col-md-4 text-center buton-options">
-                                    <button type="button" id="btn-opt-caminhoes" class="btn btn-rounded btn-amber btn-block"><i class="fas fa-truck-moving" aria-hidden="true"></i><span class="icon-button">CAMINHÃO</span></button>
-                                </div>
-                            </div>
-                            <div class="row row-select flex-box">
-                                <select class="select-marca index-selects" name="state">
-                                    <!-- Select options -->
-                                </select>
-                            </div>
-                            <div class="row row-select flex-box">
-                                <select class="select-modelo index-selects" name="state">
-                                    <!-- Select options -->
-                                </select>
-                            </div>
-                            <div class="row row-select flex-box">
-                                <select class="select-ano index-selects" name="state">
-                                    <!-- Select options -->
-                                </select>
-                            </div>
+
+                            <!-- Email -->
+                            <input type="email" id="email" class="form-control mb-4" placeholder="E-mail">
+
+                            <!-- Password -->
+                            <input type="password" id="pwd" class="form-control mb-4" placeholder="Senha">
                         </div>
                         <section id="valorsection">
                             <div class="card-footer text-muted danger-color white-text">
@@ -120,7 +100,9 @@
                                     <div class="col">
                                         <table class="table">
                                             <tbody>
-
+                                                <div class="buton-options">
+                                                    <button type="button" id="btn-login" style="margin:0 auto; display:block;" class="btn btn-rounded btn-amber btn-block"><i class="fas fa-sign-in-alt" aria-hidden="true"></i><span class="icon-button">LOGAR</span></button>
+                                                </div>
                                             </tbody>
                                         </table>
                                     </div>
@@ -161,7 +143,7 @@
     <!-- Axios -->
     <script type="text/javascript" src="assets/js/axios.min.js"></script>
     <!-- Custom JavaScript -->
-    <script type="text/javascript " src="views/index/index.js"></script>
+    <script type="text/javascript " src="views/login/login.js"></script>
 </body>
 
 </html>
